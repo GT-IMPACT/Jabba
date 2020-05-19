@@ -50,6 +50,9 @@ public class ItemBarrelMover extends Item {
 	static {
 		classExtensionsNames.add("cpw.mods.ironchest.TileEntityIronChest");
 
+		classExtensionsNames.add("chestup.TileEntityIronChest");
+
+
 		classExtensionsNames.add("buildcraft.energy.TileEngine");
 		classExtensionsNames.add("buildcraft.factory.TileTank");
 
