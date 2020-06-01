@@ -49,8 +49,8 @@ public class ItemBarrelMover extends Item {
 
 	static {
 		classExtensionsNames.add("cpw.mods.ironchest.TileEntityIronChest");
-
 		classExtensionsNames.add("chestup.TileEntityIronChest");
+		classExtensionsNames.add("cubex2.mods.multipagechest.TileEntityMultiPageChest");
 
 
 		classExtensionsNames.add("buildcraft.energy.TileEngine");
@@ -255,6 +255,14 @@ public class ItemBarrelMover extends Item {
 		/* Iron chest orientation correction */
 		if (TEClassName.contains("cpw.mods.ironchest") && nbtContainer.hasKey("facing"))
 			nbtContainer.setByte("facing", (byte)this.getBarrelOrientationOnPlacement(player).ordinal());
+
+		/* Chest Up orientation correction */
+		if (TEClassName.contains("chestup") && nbtContainer.hasKey("facing"))
+		nbtContainer.setByte("facing", (byte)this.getBarrelOrientationOnPlacement(player).ordinal());
+
+		/* Multi Page Chest orientation correction */
+		if (TEClassName.contains("cubex2.mods.multipagechest.TileEntityMultiPageChest"))
+			blockMeta = this.getBarrelOrientationOnPlacement(player).ordinal();
 
 		/* IC2 Orientation correction part1 */
 		if (TEClassName.contains("ic2.core.block") && nbtContainer.hasKey("facing"))
